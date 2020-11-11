@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: www to non www
+  COMMIT_MESSAGE: updated redirect readme
 
 tasks:
   default:
