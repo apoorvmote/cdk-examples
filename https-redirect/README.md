@@ -1,3 +1,7 @@
 # https redirect / www to non-www redirect
 
+[![MIT License](https://badgen.now.sh/badge/License/MIT/blue)](https://github.com/apoorvmote/cdk-examples/blob/master/License.md)
+[![Read Tutorial](https://badgen.now.sh/badge/Read/Tutorial/green)](https://apoorv.blog/posts/redirect-from-www-to-non-www-with-aws-cdk.html)
+![Typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label)
+
 This is designed for any https redirect but I primarily use it for www to non-www redirect
