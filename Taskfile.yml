@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: Read tutorial badge
+  COMMIT_MESSAGE: main readme badge
 
 tasks:
   default:
