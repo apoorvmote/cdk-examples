@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: License change from txt to md
+  COMMIT_MESSAGE: Read tutorial badge
 
 tasks:
   default:
