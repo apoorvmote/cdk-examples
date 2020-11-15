@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12.x
+    commands:
+      - echo Installing npm packages
+      - npm install
+      - npm update
+  build:
+    commands:
+      - echo Building react app
+      - npm run build
+      - echo Built react app on `date`
+
+artifacts:
+  base-directory: ./build
+  files:
+    - '**/*'
