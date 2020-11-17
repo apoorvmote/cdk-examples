@@ -1,0 +1,34 @@
+version: 0.2
+
+env:
+  variables:
+    hugo_version: "0.78.2"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12.x
+    commands:
+      - echo Installing hugo
+      - wget "https://github.com/gohugoio/hugo/releases/download/v${hugo_version}/hugo_extended_${hugo_version}_Linux-64bit.deb"
+      - dpkg -i hugo_extended_${hugo_version}_Linux-64bit.deb
+      - echo Installing npm packages
+      - npm install
+      - npm update
+    finally:
+      - hugo version
+  build:
+    commands:
+      - git config --global user.email "test@example.com"
+      - git config --global user.name "John Doe"
+      - git init
+      - git add .
+      - git commit -m 'build commit'
+      - echo Building Website content
+      - hugo
+      - echo Built hugo on `date`
+
+artifacts:
+  base-directory: ./public
+  files:
+    - '**/*'

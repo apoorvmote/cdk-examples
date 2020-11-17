@@ -11,8 +11,8 @@ const virginia = { account: '012345678901', region: 'us-east-1' }
 const app = new cdk.App();
 // new BackendInfraStack(app, 'BackendInfraStack');
 
-new CertificateStack(app, 'certificate-avDFA2jV6u6gUeUz', { env: virginia })
+new CertificateStack(app, 'certificate-UfyGK3cks5nZs3Wc', { env: virginia })
 
-new S3CloudfrontStack(app, 's3cloudfront-CggFnHGGvbCR4Nww', { env: virginia })
+new S3CloudfrontStack(app, 's3cloudfront-3ZFF5p53aXZaPqWB', { env: virginia })
 
-new CodePipelineStack(app, 'codepipeline-VdGaVYQZ7XSa3VWF', { env: virginia })
+new CodePipelineStack(app, 'codepipeline-22RY5f7eRyfWfDjb', { env: virginia })
