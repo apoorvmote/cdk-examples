@@ -4,6 +4,7 @@ import { Artifact, Pipeline } from '@aws-cdk/aws-codepipeline';
 import { CodeBuildAction, CodeCommitSourceAction, S3DeployAction } from '@aws-cdk/aws-codepipeline-actions';
 import { Bucket } from '@aws-cdk/aws-s3';
 import * as cdk from '@aws-cdk/core';
+import { RemovalPolicy } from '@aws-cdk/core';
 import { hugoRepoArn, websiteBucketArn } from './variables';
 
 export class CodePipelineStack extends cdk.Stack {
@@ -22,11 +23,17 @@ export class CodePipelineStack extends cdk.Stack {
         }
     })
 
+    const artifactBucket = new Bucket(this, 'websitePipelineArtifactBucket', {
+        bucketName: 'hugo-pipeline-artifact-bucket',
+        removalPolicy: RemovalPolicy.DESTROY
+    })
+
     const gitOutput = new Artifact('hugoRepoLatestMaster')
 
     const buildOutput = new Artifact('hugoBuildOutput')
 
     new Pipeline(this, 'hugoPipeline', {
+        artifactBucket,
         pipelineName: 'examplePipeline',
         stages: [
             {

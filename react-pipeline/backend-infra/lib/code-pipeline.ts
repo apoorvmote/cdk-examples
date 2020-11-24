@@ -4,6 +4,7 @@ import { Artifact, Pipeline } from '@aws-cdk/aws-codepipeline';
 import { CodeBuildAction, CodeCommitSourceAction, S3DeployAction } from '@aws-cdk/aws-codepipeline-actions';
 import { Bucket } from '@aws-cdk/aws-s3';
 import * as cdk from '@aws-cdk/core';
+import { RemovalPolicy } from '@aws-cdk/core';
 import { reactRepoArn, websiteBucketArn } from './variables';
 
 export class CodePipelineStack extends cdk.Stack {
@@ -22,11 +23,17 @@ export class CodePipelineStack extends cdk.Stack {
         }
     })
 
+    const artifactBucket = new Bucket(this, 'reactPipelineArtifactBucket', {
+        bucketName: 'react-pipeline-artifact-bucket',
+        removalPolicy: RemovalPolicy.DESTROY
+    })
+
     const gitOutput = new Artifact('reactRepoLatestMaster')
 
     const buildOutput = new Artifact('reactBuildOutput')
 
     new Pipeline(this, 'reactPipeline', {
+        artifactBucket,
         pipelineName: 'examplePipeline',
         stages: [
             {

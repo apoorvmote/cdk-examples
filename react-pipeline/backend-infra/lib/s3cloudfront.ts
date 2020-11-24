@@ -47,13 +47,7 @@ export class S3CloudfrontStack extends cdk.Stack {
             },
             behaviors: [{
                 isDefaultBehavior: true,
-                defaultTtl: Duration.hours(1),
-                forwardedValues: {
-                    cookies: {
-                        forward: 'all'
-                    },
-                    queryString: true
-                }
+                defaultTtl: Duration.hours(1)
             }]
         }],
         viewerCertificate: ViewerCertificate.fromAcmCertificate(certificate, {
