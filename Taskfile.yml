@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: added artifact bucket
+  COMMIT_MESSAGE: updated to 1.75.0
 
 tasks:
   default:
