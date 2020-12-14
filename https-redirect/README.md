@@ -1,4 +1,4 @@
-# https redirect / www to non-www redirect
+# [https redirect / www to non-www redirect](https://apoorv.blog/posts/redirect-from-www-to-non-www-with-aws-cdk.html)
 
 [![MIT License](https://badgen.now.sh/badge/License/MIT/blue)](https://github.com/apoorvmote/cdk-examples/blob/master/License.md)
 [![Read Tutorial](https://badgen.now.sh/badge/Read/Tutorial/purple)](https://apoorv.blog/posts/redirect-from-www-to-non-www-with-aws-cdk.html)

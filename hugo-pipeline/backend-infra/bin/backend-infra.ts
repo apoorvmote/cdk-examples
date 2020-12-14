@@ -4,9 +4,8 @@ import * as cdk from '@aws-cdk/core';
 import { CertificateStack } from '../lib/certificate';
 import { S3CloudfrontStack } from '../lib/s3cloudfront';
 import { CodePipelineStack } from '../lib/code-pipeline';
+import { virginia } from '../lib/variables';
 // import { BackendInfraStack } from '../lib/backend-infra-stack';
-
-const virginia = { account: '012345678901', region: 'us-east-1' }
 
 const app = new cdk.App();
 // new BackendInfraStack(app, 'BackendInfraStack');
