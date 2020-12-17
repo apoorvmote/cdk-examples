@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - rm deployment.zip -f
+      - zip deployment.zip index.js

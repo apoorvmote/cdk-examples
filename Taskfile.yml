@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: added nextjs pipeline
+  COMMIT_MESSAGE: added lambda layers
 
 tasks:
   default:
