@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: added lambda layers
+  COMMIT_MESSAGE: updated to 1.79.0
 
 tasks:
   default:

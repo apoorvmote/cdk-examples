@@ -2,7 +2,7 @@ import * as cdk from '@aws-cdk/core';
 import { Repository } from '@aws-cdk/aws-ecr';
 import { CfnOutput, Duration, RemovalPolicy } from '@aws-cdk/core';
 import { Vpc } from '@aws-cdk/aws-ec2'
-import { Cluster, ContainerImage } from '@aws-cdk/aws-ecs';
+import { Cluster, ContainerImage, DeploymentControllerType } from '@aws-cdk/aws-ecs';
 import { HostedZone } from '@aws-cdk/aws-route53';
 import { website_domain, hostedZoneId, dockerUsername, dockerPassword } from './variables';
 import { ApplicationLoadBalancedFargateService } from '@aws-cdk/aws-ecs-patterns';
@@ -63,6 +63,7 @@ export class BackendInfraStack extends cdk.Stack {
       memoryLimitMiB: 512,
       redirectHTTP: true,
       protocol: ApplicationProtocol.HTTPS,
+      // deploymentController: DeploymentControllerType.ECS,
       domainName: website_domain,
       domainZone,
       taskImageOptions: {
