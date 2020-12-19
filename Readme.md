@@ -30,3 +30,7 @@ Share code and dependency library between multiple lambda functions with layers
 ## [Lambda Local](https://apoorv.blog/posts/invoke-cdk-lambda-locally-with-sam.html)
 
 Lambda that is deployed with CDK can be invoked locally with SAM for faster iteration.
+
+## [HTTP API](https://apoorv.blog/posts/deploy-http-api-with-cdk.html)
+
+We will deploy HTTP API with CDK and connect subdomain with SSL to our api. 
