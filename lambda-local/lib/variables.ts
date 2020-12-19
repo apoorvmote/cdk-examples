@@ -1,0 +1,1 @@
+export const virginia = { account: '1234567890', region: 'us-east-1' }

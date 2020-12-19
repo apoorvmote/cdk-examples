@@ -26,3 +26,7 @@ Build docker container and deploy SSR NextJS app on Fargate with ECS and Codepip
 ## [Lambda Layers](https://apoorv.blog/posts/lambda-layers-with-cdk-for-nodejs.html)
 
 Share code and dependency library between multiple lambda functions with layers
+
+## [Lambda Local](https://apoorv.blog/posts/invoke-cdk-lambda-locally-with-sam.html)
+
+Lambda that is deployed with CDK can be invoked locally with SAM for faster iteration.
