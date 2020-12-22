@@ -63,7 +63,9 @@ export class BackendInfraStack extends cdk.Stack {
       memoryLimitMiB: 512,
       redirectHTTP: true,
       protocol: ApplicationProtocol.HTTPS,
-      // deploymentController: DeploymentControllerType.ECS,
+      deploymentController: {
+        type: DeploymentControllerType.ECS
+      }, 
       domainName: website_domain,
       domainZone,
       taskImageOptions: {

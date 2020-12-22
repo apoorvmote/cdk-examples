@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: adding http api
+  COMMIT_MESSAGE: added deploy controller
 
 tasks:
   default:
