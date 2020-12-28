@@ -34,3 +34,7 @@ Lambda that is deployed with CDK can be invoked locally with SAM for faster iter
 ## [HTTP API](https://apoorv.blog/posts/deploy-http-api-with-cdk.html)
 
 We will deploy HTTP API with CDK and connect subdomain with SSL to our api. 
+
+## [Typescript Lambda](https://apoorv.blog/posts/build-aws-lambda-function-typescript-cdk.html)
+
+Lambda function written in typescript. It is compiled and build to javascript and deployed with CDK. 
