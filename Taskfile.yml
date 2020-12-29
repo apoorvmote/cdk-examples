@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: added ts lambda
+  COMMIT_MESSAGE: added dynamo crud
 
 tasks:
   default:

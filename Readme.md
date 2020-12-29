@@ -38,3 +38,7 @@ We will deploy HTTP API with CDK and connect subdomain with SSL to our api.
 ## [Typescript Lambda](https://apoorv.blog/posts/build-aws-lambda-function-typescript-cdk.html)
 
 Lambda function written in typescript. It is compiled and build to javascript and deployed with CDK. 
+
+## [Dynamodb Crud Lambda](https://apoorv.blog/posts/dynamodb-crud-aws-sdk-v3-lambda.html)
+
+We are using latest AWS SDK V3 for Javascript for doing CRUD operations on Dynamodb with Lambda functions written in typescript.
