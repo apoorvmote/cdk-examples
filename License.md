@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2020 Apoorv Mote
+Copyright (c) 2020-2021 Apoorv Mote
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

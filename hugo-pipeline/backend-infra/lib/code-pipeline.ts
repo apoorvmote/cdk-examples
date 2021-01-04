@@ -41,6 +41,7 @@ export class CodePipelineStack extends cdk.Stack {
                 actions: [
                     new CodeCommitSourceAction({
                         actionName: 'readLatestMasterCommit',
+                        branch: 'main',
                         output: gitOutput,
                         repository: Repository.fromRepositoryArn(this, 'hugoGitRepo', hugoRepoArn)
                     })
