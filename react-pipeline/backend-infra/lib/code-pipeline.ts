@@ -18,7 +18,7 @@ export class CodePipelineStack extends cdk.Stack {
     const reactBuildProject = new PipelineProject(this, 'reactBuild', {
         buildSpec: BuildSpec.fromSourceFilename('buildspec.yml'),
         environment: {
-            buildImage: LinuxBuildImage.STANDARD_4_0,
+            buildImage: LinuxBuildImage.STANDARD_5_0,
             computeType: ComputeType.SMALL
         }
     })

@@ -105,7 +105,7 @@ export class BackendInfraStack extends cdk.Stack {
     const containerBuildProject = new PipelineProject(this, 'containerBuild', {
       buildSpec: BuildSpec.fromSourceFilename('buildspec.yml'),
       environment: {
-        buildImage: LinuxBuildImage.STANDARD_4_0,
+        buildImage: LinuxBuildImage.STANDARD_5_0,
         computeType: ComputeType.SMALL,
         privileged: true
       },

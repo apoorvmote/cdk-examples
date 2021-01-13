@@ -18,7 +18,7 @@ export class CodePipelineStack extends cdk.Stack {
     const hugoBuildProject = new PipelineProject(this, 'hugoBuild', {
         buildSpec: BuildSpec.fromSourceFilename('buildspec.yml'),
         environment: {
-            buildImage: LinuxBuildImage.STANDARD_4_0,
+            buildImage: LinuxBuildImage.STANDARD_5_0,
             computeType: ComputeType.SMALL
         }
     })
