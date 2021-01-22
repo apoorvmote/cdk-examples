@@ -41,7 +41,8 @@ export class HttpApiStack extends cdk.Stack {
           'https://example.com'
         ]
       },
-      apiName: 'exampleAPI'
+      apiName: 'exampleAPI',
+      disableExecuteApiEndpoint: true
     })
 
     new CfnOutput(this, 'apiID', {
