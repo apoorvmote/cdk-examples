@@ -42,3 +42,7 @@ Lambda function written in typescript. It is compiled and build to javascript an
 ## [Dynamodb Crud Lambda](https://apoorv.blog/posts/dynamodb-crud-aws-sdk-v3-lambda.html)
 
 We are using latest AWS SDK V3 for Javascript for doing CRUD operations on Dynamodb with Lambda functions written in typescript.
+
+## [Golang Lambda](https://apoorv.blog/posts/build-golang-aws-lambda-function-cdk.html)
+
+Build golang lambda function inside docker container that matches closely with the production environment. 
