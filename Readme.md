@@ -46,3 +46,7 @@ We are using latest AWS SDK V3 for Javascript for doing CRUD operations on Dynam
 ## [Golang Lambda](https://apoorv.blog/posts/build-golang-aws-lambda-function-cdk.html)
 
 Build golang lambda function inside docker container that matches closely with the production environment. 
+
+## [Lambda Cost Optimization](https://apoorv.blog/posts/lambda-cost-optimization-with-aws-lambda-power-tuning.html)
+
+We are going to run lambda on multiple ram settings to find out which gives you better value for money :moneybag:. 

@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: added go lambda
+  COMMIT_MESSAGE: added lambda cost
 
 tasks:
   default:
