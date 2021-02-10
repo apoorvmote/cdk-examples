@@ -32,7 +32,7 @@ export class DynamodbCrudStack extends cdk.Stack {
     })
 
     const createTodoFn = new NodejsFunction(this, 'createTodoFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/create/index.ts`,
       handler: 'createTodo',
       environment: {
@@ -43,7 +43,7 @@ export class DynamodbCrudStack extends cdk.Stack {
     todoTable.grantReadWriteData(createTodoFn)
 
     const getAllTodoFn = new NodejsFunction(this, 'getAllTodoFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/getAll/index.ts`,
       handler: 'getAll',
       environment: {
@@ -54,7 +54,7 @@ export class DynamodbCrudStack extends cdk.Stack {
     todoTable.grantReadData(getAllTodoFn)
 
     const getOneTodoFn = new NodejsFunction(this, 'getOneTodoFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/getOne/index.ts`,
       handler: 'getOne',
       environment: {
@@ -65,7 +65,7 @@ export class DynamodbCrudStack extends cdk.Stack {
     todoTable.grantReadData(getOneTodoFn)
 
     const updateTodoFn = new NodejsFunction(this, 'updateTodoFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/update/index.ts`,
       handler: 'update',
       environment: {
@@ -76,7 +76,7 @@ export class DynamodbCrudStack extends cdk.Stack {
     todoTable.grantReadWriteData(updateTodoFn)
 
     const deleteTodoFn = new NodejsFunction(this, 'deleteTodoFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/delete/index.ts`,
       handler: 'deleteTodo',
       environment: {
@@ -92,7 +92,7 @@ export class DynamodbCrudStack extends cdk.Stack {
     })
 
     const queryTodoFn = new NodejsFunction(this, 'queryTodoFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/query/index.ts`,
       handler: 'queryTodo',
       environment: {

@@ -9,7 +9,7 @@ export class TsLambdaStack extends cdk.Stack {
     // The code that defines your stack goes here
 
     new NodejsFunction(this, 'helloWorldFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/hello-world/index.ts`,
       handler: 'myFunction',
       memorySize: 128,

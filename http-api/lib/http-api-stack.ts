@@ -60,7 +60,7 @@ export class HttpApiStack extends cdk.Stack {
     })
 
     const signUpFn = new Function(this, 'signUpFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/sign-up/deployment.zip`),
       handler: 'index.handler',
       memorySize: 512

@@ -39,7 +39,7 @@ export class LambdaCostStack extends cdk.Stack {
     })
 
     const getTodoFn = new NodejsFunction(this, 'getTodoFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/get-todo/index.ts`,
       handler: 'getTodo',
       environment: {
@@ -50,7 +50,7 @@ export class LambdaCostStack extends cdk.Stack {
     todoTable.grantReadData(getTodoFn)
 
     const createTodoFn = new NodejsFunction(this, 'createTodoFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/create-todo/index.ts`,
       handler: 'createTodo',
       environment: {
@@ -61,7 +61,7 @@ export class LambdaCostStack extends cdk.Stack {
     todoTable.grantReadWriteData(createTodoFn)
 
     const deleteTodoFn = new NodejsFunction(this, 'deleteTodoFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/delete-todo/index.ts`,
       handler: 'deleteTodo',
       environment: {

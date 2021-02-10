@@ -11,7 +11,7 @@ export class LambdaLayersStack extends cdk.Stack {
 
     const layer = new LayerVersion(this, 'uuidLayer', {
       code: Code.fromAsset(`${__dirname}/../lambda-fns/layer/deployment.zip`),
-      compatibleRuntimes: [ Runtime.NODEJS_12_X],
+      compatibleRuntimes: [ Runtime.NODEJS_14_X],
       description: 'uuid package and discount for product'
     })
 
@@ -24,19 +24,19 @@ export class LambdaLayersStack extends cdk.Stack {
     })
 
     const latestLayer = LayerVersion.fromLayerVersionAttributes(this, 'latestLayer', {
-      compatibleRuntimes: [Runtime.NODEJS_12_X],
+      compatibleRuntimes: [Runtime.NODEJS_14_X],
       layerVersionArn
     })
 
     new Function(this, 'oneFn', { 
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/one/deployment.zip`),
       handler: 'index.handler',
       layers: [latestLayer]
     })
 
     new Function(this, 'twoFn', { 
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/two/deployment.zip`),
       handler: 'index.handler',
       layers: [latestLayer]
