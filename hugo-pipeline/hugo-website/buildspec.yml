@@ -2,12 +2,12 @@ version: 0.2
 
 env:
   variables:
-    hugo_version: "0.78.2"
+    hugo_version: "0.80.0"
 
 phases:
   install:
     runtime-versions:
-      nodejs: 12.x
+      nodejs: 14.x
     commands:
       - echo Installing hugo
       - wget "https://github.com/gohugoio/hugo/releases/download/v${hugo_version}/hugo_extended_${hugo_version}_Linux-64bit.deb"
