@@ -1,7 +1,7 @@
-# [Lambda Cost Optimization](https://apoorv.blog/posts/lambda-cost-optimization-with-aws-lambda-power-tuning.html)
+# [Lambda Cost Optimization](https://apoorv.blog/optimize-lambda-cost/)
 
+[![Read Tutorial](https://badgen.now.sh/badge/Read/Tutorial/purple)](https://apoorv.blog/optimize-lambda-cost/)
 [![MIT License](https://badgen.now.sh/badge/License/MIT/blue)](https://github.com/apoorvmote/cdk-examples/blob/master/License.md)
-[![Read Tutorial](https://badgen.now.sh/badge/Read/Tutorial/purple)](https://apoorv.blog/posts/lambda-cost-optimization-with-aws-lambda-power-tuning.html)
 ![AWS CDK 1.91.0](https://badgen.net/badge/aws-cdk/1.91.0/yellow)
 ![Typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label)
 

@@ -7,46 +7,46 @@ These are CDK examples exclusively written in typescript. These are CDK template
 
 Detailed explanation of each cdk example will be found at
 
-## [https redirect](https://apoorv.blog/posts/redirect-from-www-to-non-www-with-aws-cdk.html)
+## [https redirect](https://apoorv.blog/redirect-www-to-non-www/)
 
 Redirect from www to non-www url
 
-## [React pipeline](https://apoorv.blog/posts/deploying-react-app-with-aws-cdk-cloudfront-codepipeline.html)
+## [React pipeline](https://apoorv.blog/deploy-reactjs-cloudfront-codepipeline-cdk/)
 
 Build and deploy react app on s3 and cloudfront with Codepipeline
 
-## [Hugo pipeline](https://apoorv.blog/posts/deploying-hugo-static-site-with-aws-cdk-cloudfront-codepipeline.html)
+## [Hugo pipeline](https://apoorv.blog/deploy-hugo-cloudfront-codepipeline-cdk/)
 
 Build and deploy hugo website on s3 and cloudfront with Codepipeline
 
-## [NextJS pipeline](https://apoorv.blog/posts/deploy-next-js-on-fargate-with-cdk-codepipeline.html)
+## [NextJS pipeline](https://apoorv.blog/nextjs-fargate-codepipline-cdk/)
 
 Build docker container and deploy SSR NextJS app on Fargate with ECS and Codepipeline
 
-## [Lambda Layers](https://apoorv.blog/posts/lambda-layers-with-cdk-for-nodejs.html)
+## [Lambda Layers](https://apoorv.blog/lambda-layers-cdk/)
 
 Share code and dependency library between multiple lambda functions with layers
 
-## [Lambda Local](https://apoorv.blog/posts/invoke-cdk-lambda-locally-with-sam.html)
+## [Lambda Local](https://apoorv.blog/run-lambda-locally-cdk-sam/)
 
 Lambda that is deployed with CDK can be invoked locally with SAM for faster iteration.
 
-## [HTTP API](https://apoorv.blog/posts/deploy-http-api-with-cdk.html)
+## [HTTP API](https://apoorv.blog/http-api-cloudfront-cdk/)
 
 We will deploy HTTP API with CDK and connect subdomain with SSL to our api. 
 
-## [Typescript Lambda](https://apoorv.blog/posts/build-aws-lambda-function-typescript-cdk.html)
+## [Typescript Lambda](https://apoorv.blog/typescript-lambda-cdk/)
 
 Lambda function written in typescript. It is compiled and build to javascript and deployed with CDK. 
 
-## [Dynamodb Crud Lambda](https://apoorv.blog/posts/dynamodb-crud-aws-sdk-v3-lambda.html)
+## [Dynamodb Crud Lambda](https://apoorv.blog/dynamodb-crud-typescript-lambda/)
 
 We are using latest AWS SDK V3 for Javascript for doing CRUD operations on Dynamodb with Lambda functions written in typescript.
 
-## [Golang Lambda](https://apoorv.blog/posts/build-golang-aws-lambda-function-cdk.html)
+## [Golang Lambda](https://apoorv.blog/golang-lambda-cdk/)
 
 Build golang lambda function inside docker container that matches closely with the production environment. 
 
-## [Lambda Cost Optimization](https://apoorv.blog/posts/lambda-cost-optimization-with-aws-lambda-power-tuning.html)
+## [Lambda Cost Optimization](https://apoorv.blog/optimize-lambda-cost/)
 
 We are going to run lambda on multiple ram settings to find out which gives you better value for money :moneybag:. 

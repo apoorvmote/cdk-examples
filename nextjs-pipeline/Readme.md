@@ -1,7 +1,7 @@
-# [deploy NextJS with Fargate ECS with Code Pipeline](https://apoorv.blog/posts/deploy-next-js-on-fargate-with-cdk-codepipeline.html)
+# [deploy NextJS with Fargate ECS with Code Pipeline](https://apoorv.blog/nextjs-fargate-codepipline-cdk/)
 
+[![Read Tutorial](https://badgen.now.sh/badge/Read/Tutorial/purple)](https://apoorv.blog/nextjs-fargate-codepipline-cdk/)
 [![MIT License](https://badgen.now.sh/badge/License/MIT/blue)](https://github.com/apoorvmote/cdk-examples/blob/master/License.md)
-[![Read Tutorial](https://badgen.now.sh/badge/Read/Tutorial/purple)](https://apoorv.blog/posts/deploy-next-js-on-fargate-with-cdk-codepipeline.html)
 ![AWS CDK 1.91.0](https://badgen.net/badge/aws-cdk/1.91.0/yellow)
 ![Typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label)
 
