@@ -49,4 +49,8 @@ Build golang lambda function inside docker container that matches closely with t
 
 ## [Lambda Cost Optimization](https://apoorv.blog/optimize-lambda-cost/)
 
-We are going to run lambda on multiple ram settings to find out which gives you better value for money :moneybag:. 
+We are going to run lambda on multiple ram settings to find out which gives you better value for money :moneybag:.
+
+## [Basic auth to Password protect s3 website with cloudfront lambda@edge](https://apoorv.blog/password-protect-s3-static-site/)
+
+Before deploying changed to production website we deploy changes to preview site and test. 

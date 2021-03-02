@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: updated links
+  COMMIT_MESSAGE: addes password protect
 
 tasks:
   default:
