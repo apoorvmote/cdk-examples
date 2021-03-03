@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: addes password protect
+  COMMIT_MESSAGE: updated http api
 
 tasks:
   default:

@@ -14,6 +14,8 @@ export class HttpApiStack extends cdk.Stack {
 
     // The code that defines your stack goes here
 
+    ///////////////////////////////
+    // Part 1
     const hostedZone = HostedZone.fromHostedZoneAttributes(this, 'hostedZoneWithAttributes', {
       hostedZoneId,
       zoneName: website_domain
@@ -23,7 +25,10 @@ export class HttpApiStack extends cdk.Stack {
       domainName: api_domain,
       hostedZone
     })
+    ///////////////////////////////
 
+    ///////////////////////////////
+    // Part 2
     const domain = new DomainName(this, 'api_domain', {
       domainName: api_domain,
       certificate: apiCert
@@ -49,21 +54,24 @@ export class HttpApiStack extends cdk.Stack {
       value: api.httpApiId
     })
 
-    // const existingAPI = HttpApi.fromHttpApiAttributes(this, 'existingAPI', {
-    //   apiEndpoint: api_domain,
-    //   httpApiId: 'myApiId'
-    // })
-    
-    new ARecord(this, 'apiAliasRecord', {
-      zone: hostedZone,
-      target: RecordTarget.fromAlias(new ApiGatewayv2Domain(domain))
-    })
-
     const signUpFn = new Function(this, 'signUpFn', {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/sign-up/deployment.zip`),
       handler: 'index.handler',
       memorySize: 512
+    })
+    ///////////////////////////////
+
+    // const existingAPI = HttpApi.fromHttpApiAttributes(this, 'existingAPI', {
+    //   apiEndpoint: api_domain,
+    //   httpApiId: 'myApiId'
+    // })
+    
+    ///////////////////////////////
+    // Part 3
+    new ARecord(this, 'apiAliasRecord', {
+      zone: hostedZone,
+      target: RecordTarget.fromAlias(new ApiGatewayv2Domain(domain))
     })
 
     api.addRoutes({
@@ -71,5 +79,6 @@ export class HttpApiStack extends cdk.Stack {
       methods: [HttpMethod.POST],
       integration: new LambdaProxyIntegration({ handler: signUpFn })
     })
+    ///////////////////////////////
   }
 }

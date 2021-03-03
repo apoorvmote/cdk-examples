@@ -5,4 +5,4 @@
 ![AWS CDK 1.91.0](https://badgen.net/badge/aws-cdk/1.91.0/yellow)
 ![Typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label)
 
-We will deploy HTTP API with CDK and connect subdomain with SSL to our api. 
+We will deploy HTTP API with CDK and you can consume api via subdomain or via main domain. 

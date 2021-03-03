@@ -33,7 +33,7 @@ Lambda that is deployed with CDK can be invoked locally with SAM for faster iter
 
 ## [HTTP API](https://apoorv.blog/http-api-cloudfront-cdk/)
 
-We will deploy HTTP API with CDK and connect subdomain with SSL to our api. 
+We will deploy HTTP API with CDK and you can consume api via subdomain or via main domain. 
 
 ## [Typescript Lambda](https://apoorv.blog/typescript-lambda-cdk/)
 
