@@ -1,4 +1,4 @@
-import { DomainName, HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2';
+import { CorsHttpMethod, DomainName, HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2';
 import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
 import { DnsValidatedCertificate } from '@aws-cdk/aws-certificatemanager';
 import { Code, Function, Runtime } from '@aws-cdk/aws-lambda';
@@ -41,7 +41,7 @@ export class HttpApiStack extends cdk.Stack {
       corsPreflight: {
         allowCredentials: true,
         allowHeaders: ['Content-Type'],
-        allowMethods: [HttpMethod.GET, HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE],
+        allowMethods: [CorsHttpMethod.GET, CorsHttpMethod.POST, CorsHttpMethod.PUT, CorsHttpMethod.DELETE],
         allowOrigins: [
           'https://example.com'
         ]
