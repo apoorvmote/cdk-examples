@@ -3,7 +3,7 @@ import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
 import { DnsValidatedCertificate } from '@aws-cdk/aws-certificatemanager';
 import { Code, Function, Runtime } from '@aws-cdk/aws-lambda';
 import { ARecord, HostedZone, RecordTarget } from '@aws-cdk/aws-route53';
-import { ApiGatewayv2Domain } from '@aws-cdk/aws-route53-targets';
+import { ApiGatewayv2DomainProperties } from '@aws-cdk/aws-route53-targets';
 import * as cdk from '@aws-cdk/core';
 import { CfnOutput } from '@aws-cdk/core';
 import { api_domain, hostedZoneId, website_domain } from './variables';
@@ -71,7 +71,7 @@ export class HttpApiStack extends cdk.Stack {
     // Part 3
     new ARecord(this, 'apiAliasRecord', {
       zone: hostedZone,
-      target: RecordTarget.fromAlias(new ApiGatewayv2Domain(domain))
+      target: RecordTarget.fromAlias(new ApiGatewayv2DomainProperties(domain.regionalDomainName, domain.regionalHostedZoneId))
     })
 
     api.addRoutes({
