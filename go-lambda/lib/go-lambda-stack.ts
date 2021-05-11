@@ -11,7 +11,7 @@ export class GoLambdaStack extends cdk.Stack {
       handler: 'main',
       code: Code.fromAsset(`${__dirname}/../lambda-fns/hello-world/`, {
         bundling: {
-          image: Runtime.GO_1_X.bundlingDockerImage,
+          image: Runtime.GO_1_X.bundlingImage,
           user: 'root',
           command: [
             'bash', '-c', [

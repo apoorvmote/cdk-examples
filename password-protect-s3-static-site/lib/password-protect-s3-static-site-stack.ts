@@ -65,7 +65,7 @@ export class PasswordProtectS3StaticSiteStack extends cdk.Stack {
     })
 
     const edgeAuth = new experimental.EdgeFunction(this, 'edgeAuthFn', {
-      runtime: Runtime.NODEJS_12_X,
+      runtime: Runtime.NODEJS_14_X,
       handler: 'index.handler',
       code: Code.fromAsset(`${__dirname}/../lambda-fns/basic-auth/deployment.zip`),
       memorySize: 128
