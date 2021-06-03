@@ -7,3 +7,6 @@ tasks:
     cmds:
       - rm -rf node_modules/
       - npm i
+  fix:
+    cmds:
+      - npm audit fix
