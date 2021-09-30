@@ -1,7 +1,8 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: updated to 1.125.0
+  COMMIT_MESSAGE: changed from intel to ARM lambda
+  # COMMIT_MESSAGE: updated to 1.125.0
 
 tasks:
   default:

@@ -1,6 +1,6 @@
 import { AttributeType, BillingMode, Table } from '@aws-cdk/aws-dynamodb';
 import { NodejsFunction } from '@aws-cdk/aws-lambda-nodejs';
-import { Runtime } from '@aws-cdk/aws-lambda';
+import { Architecture, Runtime } from '@aws-cdk/aws-lambda';
 import * as cdk from '@aws-cdk/core';
 import { CfnOutput, RemovalPolicy } from '@aws-cdk/core';
 import { todoTableName } from './variables'
@@ -35,6 +35,7 @@ export class DynamodbCrudStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/create/index.ts`,
       handler: 'createTodo',
+      architectures: [Architecture.ARM_64],
       environment: {
         TODO_TABLE_NAME: todoTableName
       }
@@ -46,6 +47,7 @@ export class DynamodbCrudStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/getAll/index.ts`,
       handler: 'getAll',
+      architectures: [Architecture.ARM_64],
       environment: {
         TODO_TABLE_NAME: todoTableName
       }
@@ -57,6 +59,7 @@ export class DynamodbCrudStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/getOne/index.ts`,
       handler: 'getOne',
+      architectures: [Architecture.ARM_64],
       environment: {
         TODO_TABLE_NAME: todoTableName
       }
@@ -68,6 +71,7 @@ export class DynamodbCrudStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/update/index.ts`,
       handler: 'update',
+      architectures: [Architecture.ARM_64],
       environment: {
         TODO_TABLE_NAME: todoTableName
       }
@@ -79,6 +83,7 @@ export class DynamodbCrudStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/delete/index.ts`,
       handler: 'deleteTodo',
+      architectures: [Architecture.ARM_64],
       environment: {
         TODO_TABLE_NAME: todoTableName
       }
@@ -95,6 +100,7 @@ export class DynamodbCrudStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/query/index.ts`,
       handler: 'queryTodo',
+      architectures: [Architecture.ARM_64],
       environment: {
         TODO_TABLE_NAME: todoTableName
       }

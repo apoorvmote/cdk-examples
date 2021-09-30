@@ -1,7 +1,7 @@
 import { CorsHttpMethod, DomainName, HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2';
 import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
 import { DnsValidatedCertificate } from '@aws-cdk/aws-certificatemanager';
-import { Code, Function, Runtime } from '@aws-cdk/aws-lambda';
+import { Architecture, Code, Function, Runtime } from '@aws-cdk/aws-lambda';
 import { ARecord, HostedZone, RecordTarget } from '@aws-cdk/aws-route53';
 import { ApiGatewayv2DomainProperties } from '@aws-cdk/aws-route53-targets';
 import * as cdk from '@aws-cdk/core';
@@ -58,6 +58,7 @@ export class HttpApiStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/sign-up/deployment.zip`),
       handler: 'index.handler',
+      architectures: [Architecture.ARM_64],
       memorySize: 512
     })
     ///////////////////////////////

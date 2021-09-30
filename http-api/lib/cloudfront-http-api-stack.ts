@@ -1,7 +1,7 @@
 import { DnsValidatedCertificate } from '@aws-cdk/aws-certificatemanager';
 import { HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2';
 import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
-import { Code, Function, Runtime } from '@aws-cdk/aws-lambda';
+import { Architecture, Code, Function, Runtime } from '@aws-cdk/aws-lambda';
 import { ARecord, HostedZone, RecordTarget } from '@aws-cdk/aws-route53';
 import { CloudFrontTarget } from '@aws-cdk/aws-route53-targets';
 import * as cdk from '@aws-cdk/core';
@@ -40,7 +40,8 @@ export class CloudfrontHttpApiStack extends cdk.Stack {
         runtime: Runtime.NODEJS_14_X,
         code: Code.fromAsset(`${__dirname}/../lambda-fns/sign-up/deployment.zip`),
         handler: 'index.handler',
-        memorySize: 512
+        memorySize: 512,
+        architectures: [Architecture.ARM_64]
     })
     ///////////////////////////////
     

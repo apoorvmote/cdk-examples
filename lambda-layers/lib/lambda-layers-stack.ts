@@ -1,4 +1,4 @@
-import { Code, Function, LayerVersion, Runtime } from '@aws-cdk/aws-lambda';
+import { Architecture, Code, Function, LayerVersion, Runtime } from '@aws-cdk/aws-lambda';
 import * as cdk from '@aws-cdk/core';
 import { CfnOutput } from '@aws-cdk/core';
 import { account, layerVersionArn } from './variables';
@@ -12,6 +12,7 @@ export class LambdaLayersStack extends cdk.Stack {
     const layer = new LayerVersion(this, 'uuidLayer', {
       code: Code.fromAsset(`${__dirname}/../lambda-fns/layer/deployment.zip`),
       compatibleRuntimes: [ Runtime.NODEJS_14_X],
+      compatibleArchitectures: [Architecture.ARM_64],
       description: 'uuid package and discount for product'
     })
 
@@ -32,6 +33,7 @@ export class LambdaLayersStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/one/deployment.zip`),
       handler: 'index.handler',
+      architectures: [Architecture.ARM_64],
       layers: [latestLayer]
     })
 
@@ -39,6 +41,7 @@ export class LambdaLayersStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/two/deployment.zip`),
       handler: 'index.handler',
+      architectures: [Architecture.ARM_64],
       layers: [latestLayer]
     })
   }
