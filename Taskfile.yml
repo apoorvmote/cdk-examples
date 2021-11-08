@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: updated to 1.130.0
+  COMMIT_MESSAGE: updated to 1.131.0
 
 tasks:
   default:
