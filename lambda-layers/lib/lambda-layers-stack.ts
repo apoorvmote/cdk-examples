@@ -33,7 +33,7 @@ export class LambdaLayersStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/one/deployment.zip`),
       handler: 'index.handler',
-      architectures: [Architecture.ARM_64],
+      architecture: Architecture.ARM_64,
       layers: [latestLayer]
     })
 
@@ -41,7 +41,7 @@ export class LambdaLayersStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/two/deployment.zip`),
       handler: 'index.handler',
-      architectures: [Architecture.ARM_64],
+      architecture: Architecture.ARM_64,
       layers: [latestLayer]
     })
   }

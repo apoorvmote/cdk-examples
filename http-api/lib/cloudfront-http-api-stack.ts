@@ -41,7 +41,7 @@ export class CloudfrontHttpApiStack extends cdk.Stack {
         code: Code.fromAsset(`${__dirname}/../lambda-fns/sign-up/deployment.zip`),
         handler: 'index.handler',
         memorySize: 512,
-        architectures: [Architecture.ARM_64]
+        architecture: Architecture.ARM_64
     })
     ///////////////////////////////
     

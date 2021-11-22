@@ -13,7 +13,7 @@ export class TsLambdaStack extends cdk.Stack {
       entry: `${__dirname}/../lambda-fns/hello-world/index.ts`,
       handler: 'myFunction',
       memorySize: 128,
-      architectures: [Architecture.ARM_64],
+      architecture: Architecture.ARM_64,
       bundling: {
         minify: true,
         // tsconfig: `${__dirname}/../lambda-fns/hello-world/tsconfig.json` // if you want to override defaults

@@ -42,7 +42,7 @@ export class LambdaCostStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/get-todo/index.ts`,
       handler: 'getTodo',
-      architectures: [Architecture.ARM_64],
+      architecture: Architecture.ARM_64,
       environment: {
         TODO_TABLE_NAME: todoTableName
       }
@@ -54,7 +54,7 @@ export class LambdaCostStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/create-todo/index.ts`,
       handler: 'createTodo',
-      architectures: [Architecture.ARM_64],
+      architecture: Architecture.ARM_64,
       environment: {
         TODO_TABLE_NAME: todoTableName
       }
@@ -66,7 +66,7 @@ export class LambdaCostStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: `${__dirname}/../lambda-fns/delete-todo/index.ts`,
       handler: 'deleteTodo',
-      architectures: [Architecture.ARM_64],
+      architecture: Architecture.ARM_64,
       environment: {
         TODO_TABLE_NAME: todoTableName
       }
