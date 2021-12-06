@@ -1,18 +1,18 @@
-import { DnsValidatedCertificate } from '@aws-cdk/aws-certificatemanager';
-import { HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2';
-import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
-import { Architecture, Code, Function, Runtime } from '@aws-cdk/aws-lambda';
-import { ARecord, HostedZone, RecordTarget } from '@aws-cdk/aws-route53';
-import { CloudFrontTarget } from '@aws-cdk/aws-route53-targets';
-import * as cdk from '@aws-cdk/core';
-import { CfnOutput } from '@aws-cdk/core';
+import { Stack, StackProps, CfnOutput } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
+import { HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2-alpha';
+import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+import { Architecture, Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
+import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
 import { hostedZoneId, website_domain } from './variables';
-import { HttpOrigin } from '@aws-cdk/aws-cloudfront-origins';
-import { AllowedMethods, CachePolicy, Distribution, HttpVersion, OriginRequestCookieBehavior, OriginRequestHeaderBehavior, OriginRequestPolicy, OriginRequestQueryStringBehavior, PriceClass, SecurityPolicyProtocol, ViewerProtocolPolicy } from '@aws-cdk/aws-cloudfront';
+import { HttpOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
+import { AllowedMethods, CachePolicy, Distribution, HttpVersion, OriginRequestCookieBehavior, OriginRequestHeaderBehavior, OriginRequestPolicy, OriginRequestQueryStringBehavior, PriceClass, SecurityPolicyProtocol, ViewerProtocolPolicy } from 'aws-cdk-lib/aws-cloudfront';
 
 
-export class CloudfrontHttpApiStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class CloudfrontHttpApiStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here

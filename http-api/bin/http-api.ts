@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
-import * as cdk from '@aws-cdk/core';
+import * as cdk from 'aws-cdk-lib';
 import { HttpApiStack } from '../lib/http-api-stack';
 import { virginia } from '../lib/variables';
 

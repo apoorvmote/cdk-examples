@@ -1,6 +1,6 @@
 {
   "name": "http-api",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "bin": {
     "http-api": "bin/http-api.js"
   },
@@ -11,25 +11,19 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.134.0",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
     "jest": "^27.2.5",
     "ts-jest": "^26.2.0",
-    "aws-cdk": "1.134.0",
+    "aws-cdk": "2.0.0",
     "ts-node": "^9.0.0",
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigatewayv2": "^1.134.0",
-    "@aws-cdk/aws-apigatewayv2-integrations": "^1.134.0",
-    "@aws-cdk/aws-certificatemanager": "^1.134.0",
-    "@aws-cdk/aws-cloudfront": "^1.134.0",
-    "@aws-cdk/aws-cloudfront-origins": "^1.134.0",
-    "@aws-cdk/aws-lambda": "^1.134.0",
-    "@aws-cdk/aws-route53": "^1.134.0",
-    "@aws-cdk/aws-route53-targets": "^1.134.0",
-    "@aws-cdk/core": "1.134.0",
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.0.0-alpha.11",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.0.0-alpha.11",
+    "aws-cdk-lib": "2.0.0",
+    "constructs": "^10.0.0",
     "source-map-support": "^0.5.16"
   }
 }

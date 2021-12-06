@@ -1,7 +1,8 @@
-import * as cdk from '@aws-cdk/core';
+import { Stack, StackProps } from "aws-cdk-lib"
+import { Construct } from "constructs"
 
-export class BackendInfraStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class BackendInfraStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here

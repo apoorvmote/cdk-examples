@@ -1,18 +1,18 @@
-import { Certificate } from '@aws-cdk/aws-certificatemanager';
-import { AllowedMethods, CachePolicy, CloudFrontWebDistribution, Distribution, HttpVersion, OriginAccessIdentity, OriginProtocolPolicy, PriceClass, SecurityPolicyProtocol, ViewerCertificate, ViewerProtocolPolicy } from '@aws-cdk/aws-cloudfront';
-import { HttpOrigin } from '@aws-cdk/aws-cloudfront-origins';
-import { Repository } from '@aws-cdk/aws-codecommit';
-import { AnyPrincipal, Effect, PolicyStatement } from '@aws-cdk/aws-iam';
-import { ARecord, HostedZone, RecordTarget } from '@aws-cdk/aws-route53';
-import { HttpsRedirect } from '@aws-cdk/aws-route53-patterns';
-import { CloudFrontTarget } from '@aws-cdk/aws-route53-targets';
-import { Bucket } from '@aws-cdk/aws-s3';
-import * as cdk from '@aws-cdk/core';
-import { CfnOutput, Duration, RemovalPolicy } from '@aws-cdk/core';
+import { Stack, StackProps, CfnOutput, RemovalPolicy, Duration } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
+import { AllowedMethods, CachePolicy, CloudFrontWebDistribution, Distribution, HttpVersion, OriginAccessIdentity, OriginProtocolPolicy, PriceClass, SecurityPolicyProtocol, ViewerCertificate, ViewerProtocolPolicy } from 'aws-cdk-lib/aws-cloudfront';
+import { HttpOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
+import { Repository } from 'aws-cdk-lib/aws-codecommit';
+import { AnyPrincipal, Effect, PolicyStatement } from 'aws-cdk-lib/aws-iam';
+import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
+import { HttpsRedirect } from 'aws-cdk-lib/aws-route53-patterns';
+import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
+import { Bucket } from 'aws-cdk-lib/aws-s3';
 import { bucketRefererSecret, bucketWebsiteUrl, hostedZoneId, websiteCertArn, website_domain } from './variables';
 
-export class S3CloudfrontStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class S3CloudfrontStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     ///////////////////////////////

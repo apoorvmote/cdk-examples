@@ -1,17 +1,17 @@
-import { DnsValidatedCertificate } from '@aws-cdk/aws-certificatemanager';
-import { AllowedMethods, CacheHeaderBehavior, CachePolicy, Distribution, experimental, HttpVersion, LambdaEdgeEventType, OriginProtocolPolicy, PriceClass, SecurityPolicyProtocol, ViewerProtocolPolicy } from '@aws-cdk/aws-cloudfront';
-import { HttpOrigin } from '@aws-cdk/aws-cloudfront-origins';
-import { AnyPrincipal, Effect, PolicyStatement } from '@aws-cdk/aws-iam';
-import { Code, Runtime } from '@aws-cdk/aws-lambda';
-import { ARecord, HostedZone, RecordTarget } from '@aws-cdk/aws-route53';
-import { CloudFrontTarget } from '@aws-cdk/aws-route53-targets';
-import { Bucket } from '@aws-cdk/aws-s3';
-import * as cdk from '@aws-cdk/core';
-import { CfnOutput, Duration, RemovalPolicy } from '@aws-cdk/core';
+import { Stack, StackProps, CfnOutput, RemovalPolicy, Duration } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
+import { AllowedMethods, CacheHeaderBehavior, CachePolicy, Distribution, experimental, HttpVersion, LambdaEdgeEventType, OriginProtocolPolicy, PriceClass, SecurityPolicyProtocol, ViewerProtocolPolicy } from 'aws-cdk-lib/aws-cloudfront';
+import { HttpOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
+import { AnyPrincipal, Effect, PolicyStatement } from 'aws-cdk-lib/aws-iam';
+import { Code, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
+import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
+import { Bucket } from 'aws-cdk-lib/aws-s3';
 import { hostedZoneId, website_domain, preview_domain, previewSecret, previewBucketWebsiteUrl } from './variables';
 
-export class PasswordProtectS3StaticSiteStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class PasswordProtectS3StaticSiteStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here

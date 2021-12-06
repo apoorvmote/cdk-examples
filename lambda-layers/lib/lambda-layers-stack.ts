@@ -1,10 +1,10 @@
-import { Architecture, Code, Function, LayerVersion, Runtime } from '@aws-cdk/aws-lambda';
-import * as cdk from '@aws-cdk/core';
-import { CfnOutput } from '@aws-cdk/core';
+import { Stack, StackProps, CfnOutput } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { Architecture, Code, Function, LayerVersion, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { account, layerVersionArn } from './variables';
 
-export class LambdaLayersStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class LambdaLayersStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here

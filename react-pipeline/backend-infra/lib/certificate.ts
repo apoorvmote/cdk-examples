@@ -1,11 +1,11 @@
-import { DnsValidatedCertificate } from '@aws-cdk/aws-certificatemanager';
-import { HostedZone } from '@aws-cdk/aws-route53';
-import * as cdk from '@aws-cdk/core';
-import { CfnOutput } from '@aws-cdk/core';
+import { Stack, StackProps, CfnOutput } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
+import { HostedZone } from 'aws-cdk-lib/aws-route53';
 import { hostedZoneId, website_domain } from './variables';
 
-export class CertificateStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class CertificateStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
     ///////////////////////////////
     // Part 1

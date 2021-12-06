@@ -1,22 +1,22 @@
-import * as cdk from '@aws-cdk/core';
-import { Repository } from '@aws-cdk/aws-ecr';
-import { CfnOutput, Duration, RemovalPolicy } from '@aws-cdk/core';
-import { Vpc } from '@aws-cdk/aws-ec2'
-import { Cluster, ContainerImage, DeploymentControllerType } from '@aws-cdk/aws-ecs';
-import { HostedZone } from '@aws-cdk/aws-route53';
+import { Stack, StackProps, CfnOutput, RemovalPolicy, Duration } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { Repository } from 'aws-cdk-lib/aws-ecr';
+import { Vpc } from 'aws-cdk-lib/aws-ec2'
+import { Cluster, ContainerImage, DeploymentControllerType } from 'aws-cdk-lib/aws-ecs';
+import { HostedZone } from 'aws-cdk-lib/aws-route53';
 import { website_domain, hostedZoneId, dockerUsername, dockerPassword } from './variables';
-import { ApplicationLoadBalancedFargateService } from '@aws-cdk/aws-ecs-patterns';
-import { ApplicationProtocol } from '@aws-cdk/aws-elasticloadbalancingv2';
-import { HttpsRedirect } from '@aws-cdk/aws-route53-patterns';
-import * as codecommit from '@aws-cdk/aws-codecommit'
-import { BuildSpec, ComputeType, LinuxBuildImage, PipelineProject } from '@aws-cdk/aws-codebuild';
-import { Bucket } from '@aws-cdk/aws-s3';
-import { Artifact, Pipeline } from '@aws-cdk/aws-codepipeline';
-import { CodeBuildAction, CodeCommitSourceAction, EcsDeployAction } from '@aws-cdk/aws-codepipeline-actions';
+import { ApplicationLoadBalancedFargateService } from 'aws-cdk-lib/aws-ecs-patterns';
+import { ApplicationProtocol } from 'aws-cdk-lib/aws-elasticloadbalancingv2';
+import { HttpsRedirect } from 'aws-cdk-lib/aws-route53-patterns';
+import * as codecommit from 'aws-cdk-lib/aws-codecommit'
+import { BuildSpec, ComputeType, LinuxBuildImage, PipelineProject } from 'aws-cdk-lib/aws-codebuild';
+import { Bucket } from 'aws-cdk-lib/aws-s3';
+import { Artifact, Pipeline } from 'aws-cdk-lib/aws-codepipeline';
+import { CodeBuildAction, CodeCommitSourceAction, EcsDeployAction } from 'aws-cdk-lib/aws-codepipeline-actions';
 
 
-export class BackendInfraStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class BackendInfraStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here

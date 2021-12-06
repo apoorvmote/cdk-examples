@@ -1,15 +1,15 @@
-import { CorsHttpMethod, DomainName, HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2';
-import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
-import { DnsValidatedCertificate } from '@aws-cdk/aws-certificatemanager';
-import { Architecture, Code, Function, Runtime } from '@aws-cdk/aws-lambda';
-import { ARecord, HostedZone, RecordTarget } from '@aws-cdk/aws-route53';
-import { ApiGatewayv2DomainProperties } from '@aws-cdk/aws-route53-targets';
-import * as cdk from '@aws-cdk/core';
-import { CfnOutput } from '@aws-cdk/core';
+import { Stack, StackProps, CfnOutput } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { CorsHttpMethod, DomainName, HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2-alpha';
+import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
+import { Architecture, Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
+import { ApiGatewayv2DomainProperties } from 'aws-cdk-lib/aws-route53-targets';
 import { api_domain, hostedZoneId, website_domain } from './variables';
 
-export class HttpApiStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class HttpApiStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here
@@ -58,7 +58,7 @@ export class HttpApiStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/sign-up/deployment.zip`),
       handler: 'index.handler',
-      architectures: [Architecture.ARM_64],
+      architecture: Architecture.ARM_64,
       memorySize: 512
     })
     ///////////////////////////////

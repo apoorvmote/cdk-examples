@@ -1,9 +1,10 @@
-import { HostedZone } from '@aws-cdk/aws-route53';
-import { HttpsRedirect } from '@aws-cdk/aws-route53-patterns';
-import * as cdk from '@aws-cdk/core';
+import { Stack, StackProps } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { HostedZone } from 'aws-cdk-lib/aws-route53';
+import { HttpsRedirect } from 'aws-cdk-lib/aws-route53-patterns';
 
-export class HttpsRedirectStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class HttpsRedirectStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here

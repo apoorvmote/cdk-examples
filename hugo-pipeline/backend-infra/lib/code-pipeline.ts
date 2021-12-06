@@ -1,14 +1,14 @@
-import { BuildSpec, ComputeType, LinuxBuildImage, PipelineProject } from '@aws-cdk/aws-codebuild';
-import { Repository } from '@aws-cdk/aws-codecommit';
-import { Artifact, Pipeline } from '@aws-cdk/aws-codepipeline';
-import { CodeBuildAction, CodeCommitSourceAction, S3DeployAction } from '@aws-cdk/aws-codepipeline-actions';
-import { Bucket } from '@aws-cdk/aws-s3';
-import * as cdk from '@aws-cdk/core';
-import { RemovalPolicy } from '@aws-cdk/core';
+import { Stack, StackProps, RemovalPolicy } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { BuildSpec, ComputeType, LinuxBuildImage, PipelineProject } from 'aws-cdk-lib/aws-codebuild';
+import { Repository } from 'aws-cdk-lib/aws-codecommit';
+import { Artifact, Pipeline } from 'aws-cdk-lib/aws-codepipeline';
+import { CodeBuildAction, CodeCommitSourceAction, S3DeployAction } from 'aws-cdk-lib/aws-codepipeline-actions';
+import { Bucket } from 'aws-cdk-lib/aws-s3';
 import { hugoRepoArn, websiteBucketArn } from './variables';
 
-export class CodePipelineStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class CodePipelineStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     ///////////////////////////////

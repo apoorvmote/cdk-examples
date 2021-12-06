@@ -1,9 +1,10 @@
-import { Peer, Port, SecurityGroup, Vpc } from '@aws-cdk/aws-ec2';
-import { Cluster, ContainerImage, FargateService, FargateTaskDefinition } from '@aws-cdk/aws-ecs';
-import * as cdk from '@aws-cdk/core';
+import { Stack, StackProps } from "aws-cdk-lib"
+import { Construct } from "constructs"
+import { Peer, Port, SecurityGroup, Vpc } from 'aws-cdk-lib/aws-ec2';
+import { Cluster, ContainerImage, FargateService, FargateTaskDefinition } from 'aws-cdk-lib/aws-ecs';
 
-export class WOLoadBalancerStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+export class WOLoadBalancerStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     // The code that defines your stack goes here
