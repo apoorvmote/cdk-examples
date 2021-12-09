@@ -2,7 +2,7 @@ import { Stack, StackProps, CfnOutput } from "aws-cdk-lib"
 import { Construct } from "constructs"
 import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2-alpha';
-import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
 import { Architecture, Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
 import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets';
@@ -50,7 +50,7 @@ export class CloudfrontHttpApiStack extends Stack {
     api.addRoutes({
         path: '/api/sign-up',
         methods: [HttpMethod.POST],
-        integration: new LambdaProxyIntegration({ handler: signUpFn })
+        integration: new HttpLambdaIntegration('signUpFn', signUpFn)
     })
     
     const apiOriginPolicy = new OriginRequestPolicy(this, 'apiOriginPolicy', {

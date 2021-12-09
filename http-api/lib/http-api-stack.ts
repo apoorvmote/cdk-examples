@@ -1,7 +1,7 @@
 import { Stack, StackProps, CfnOutput } from "aws-cdk-lib"
 import { Construct } from "constructs"
 import { CorsHttpMethod, DomainName, HttpApi, HttpMethod } from '@aws-cdk/aws-apigatewayv2-alpha';
-import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
 import { DnsValidatedCertificate } from 'aws-cdk-lib/aws-certificatemanager';
 import { Architecture, Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { ARecord, HostedZone, RecordTarget } from 'aws-cdk-lib/aws-route53';
@@ -78,7 +78,7 @@ export class HttpApiStack extends Stack {
     api.addRoutes({
       path: '/sign-up',
       methods: [HttpMethod.POST],
-      integration: new LambdaProxyIntegration({ handler: signUpFn })
+      integration: new HttpLambdaIntegration('signUpFn', signUpFn)
     })
     ///////////////////////////////
   }
