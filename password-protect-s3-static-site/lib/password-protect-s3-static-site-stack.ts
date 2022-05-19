@@ -93,7 +93,7 @@ export class PasswordProtectS3StaticSiteStack extends Stack {
       },
       domainNames: [preview_domain],
       certificate: previewCert,
-      minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2019,
+      minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
       httpVersion: HttpVersion.HTTP2,
       priceClass: PriceClass.PRICE_CLASS_ALL
     })

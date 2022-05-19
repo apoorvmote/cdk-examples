@@ -9,7 +9,7 @@ export class LambdaLocalStack extends Stack {
     // The code that defines your stack goes here
 
     const oneFn = new Function(this, 'oneFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       code: Code.fromAsset(`${__dirname}/../lambda-fns/one/deployment.zip`),
       handler: 'index.handler'
     })

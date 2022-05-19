@@ -49,7 +49,7 @@ export class S3CloudfrontStack extends Stack {
         },
         domainNames: [website_domain],
         certificate,
-        minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2019,
+        minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
         defaultRootObject: 'index.html',
         enableIpv6: true,
         enabled: true,

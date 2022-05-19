@@ -37,7 +37,7 @@ export class CloudfrontHttpApiStack extends Stack {
     })
     
     const signUpFn = new Function(this, 'signUpFn', {
-        runtime: Runtime.NODEJS_14_X,
+        runtime: Runtime.NODEJS_16_X,
         code: Code.fromAsset(`${__dirname}/../lambda-fns/sign-up/deployment.zip`),
         handler: 'index.handler',
         memorySize: 512,
@@ -75,7 +75,7 @@ export class CloudfrontHttpApiStack extends Stack {
         },
         domainNames: [website_domain],
         certificate,
-        minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2019,
+        minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
         enableIpv6: true,
         enabled: true,
         httpVersion: HttpVersion.HTTP2,

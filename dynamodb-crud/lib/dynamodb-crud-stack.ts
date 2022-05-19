@@ -32,7 +32,7 @@ export class DynamodbCrudStack extends Stack {
     })
 
     const createTodoFn = new NodejsFunction(this, 'createTodoFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       entry: `${__dirname}/../lambda-fns/create/index.ts`,
       handler: 'createTodo',
       architecture: Architecture.ARM_64,
@@ -44,7 +44,7 @@ export class DynamodbCrudStack extends Stack {
     todoTable.grantReadWriteData(createTodoFn)
 
     const getAllTodoFn = new NodejsFunction(this, 'getAllTodoFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       entry: `${__dirname}/../lambda-fns/getAll/index.ts`,
       handler: 'getAll',
       architecture: Architecture.ARM_64,
@@ -56,7 +56,7 @@ export class DynamodbCrudStack extends Stack {
     todoTable.grantReadData(getAllTodoFn)
 
     const getOneTodoFn = new NodejsFunction(this, 'getOneTodoFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       entry: `${__dirname}/../lambda-fns/getOne/index.ts`,
       handler: 'getOne',
       architecture: Architecture.ARM_64,
@@ -68,7 +68,7 @@ export class DynamodbCrudStack extends Stack {
     todoTable.grantReadData(getOneTodoFn)
 
     const updateTodoFn = new NodejsFunction(this, 'updateTodoFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       entry: `${__dirname}/../lambda-fns/update/index.ts`,
       handler: 'update',
       architecture: Architecture.ARM_64,
@@ -80,7 +80,7 @@ export class DynamodbCrudStack extends Stack {
     todoTable.grantReadWriteData(updateTodoFn)
 
     const deleteTodoFn = new NodejsFunction(this, 'deleteTodoFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       entry: `${__dirname}/../lambda-fns/delete/index.ts`,
       handler: 'deleteTodo',
       architecture: Architecture.ARM_64,
@@ -97,7 +97,7 @@ export class DynamodbCrudStack extends Stack {
     })
 
     const queryTodoFn = new NodejsFunction(this, 'queryTodoFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       entry: `${__dirname}/../lambda-fns/query/index.ts`,
       handler: 'queryTodo',
       architecture: Architecture.ARM_64,

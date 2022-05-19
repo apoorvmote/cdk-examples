@@ -1,8 +1,7 @@
 version: '3'
 
 vars:
-  COMMIT_MESSAGE: test push
-  # COMMIT_MESSAGE: updated to 2.22.0
+  COMMIT_MESSAGE: updated to 2.24.1
 
 tasks:
   default:

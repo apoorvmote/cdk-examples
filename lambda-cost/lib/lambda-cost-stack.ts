@@ -39,7 +39,7 @@ export class LambdaCostStack extends Stack {
     })
 
     const getTodoFn = new NodejsFunction(this, 'getTodoFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       entry: `${__dirname}/../lambda-fns/get-todo/index.ts`,
       handler: 'getTodo',
       architecture: Architecture.ARM_64,
@@ -51,7 +51,7 @@ export class LambdaCostStack extends Stack {
     todoTable.grantReadData(getTodoFn)
 
     const createTodoFn = new NodejsFunction(this, 'createTodoFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       entry: `${__dirname}/../lambda-fns/create-todo/index.ts`,
       handler: 'createTodo',
       architecture: Architecture.ARM_64,
@@ -63,7 +63,7 @@ export class LambdaCostStack extends Stack {
     todoTable.grantReadWriteData(createTodoFn)
 
     const deleteTodoFn = new NodejsFunction(this, 'deleteTodoFn', {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_16_X,
       entry: `${__dirname}/../lambda-fns/delete-todo/index.ts`,
       handler: 'deleteTodo',
       architecture: Architecture.ARM_64,
