@@ -15,14 +15,14 @@
     "@types/node": "10.17.27",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
-    "aws-cdk": "2.34.2",
+    "aws-cdk": "2.35.0",
     "ts-node": "^10.7.0",
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigatewayv2-alpha": "^2.34.2-alpha.0",
-    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.34.2-alpha.0",
-    "aws-cdk-lib": "2.34.2",
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.35.0-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.35.0-alpha.0",
+    "aws-cdk-lib": "2.35.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.21"
   }

@@ -16,7 +16,7 @@ export class LambdaCostStack extends Stack {
     new CfnApplication(this, 'powerTuner', {
       location: {
           applicationId: 'arn:aws:serverlessrepo:us-east-1:451282441545:applications/aws-lambda-power-tuning',
-          semanticVersion: '4.2.0'
+          semanticVersion: '4.2.1'
       },
       parameters: {
           "lambdaResource": "*",
